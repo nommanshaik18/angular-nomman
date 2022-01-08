@@ -1,0 +1,28 @@
+<div class="formContainer">
+  <h2>Dropdown Autocomplete Using API</h2>
+  <mat-form-field>
+    <input
+      type="text"
+      placeholder="Start Typing..."
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+    />
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option.name"
+      >
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>
+<div>
+  <!-- <button (click)="getcities()">Click me</button> -->
+  <h1>Citi Id: {{citi_id}}</h1>
+</div>
+
+<!-- Copyright 2019 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
